@@ -147,6 +147,11 @@ export function setValue(target: any, key: string, value: any): void {
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i];
 
+    // Skip dangerous properties to prevent prototype pollution
+    if (key === '__proto__' || key === 'constructor') {
+      continue;
+    }
+
     // If we're at the last key, set the value
     if (i === keys.length - 1) {
       current[key] = value;
