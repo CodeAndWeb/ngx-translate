@@ -91,6 +91,50 @@
         }
       }
     },
+    "multi-http-loader": {
+      "projectType": "library",
+      "root": "projects/multi-http-loader",
+      "sourceRoot": "projects/multi-http-loader/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/multi-http-loader/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/multi-http-loader/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/multi-http-loader/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "./tsconfig.spec.json",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/multi-http-loader/**/*.ts",
+              "projects/multi-http-loader/**/*.html"
+            ],
+            "eslintConfig": "projects/multi-http-loader/eslint.config.js"
+          }
+        }
+      }
+    },
     "test-app": {
       "projectType": "application",
       "schematics": {

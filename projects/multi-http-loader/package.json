@@ -1,0 +1,29 @@
+{
+  "name": "@codeandweb/multi-http-loader",
+  "version": "16.0.0",
+  "description": "http loader for dynamically loading translation files for @codeandweb/ngx-translate",
+  "keywords": [
+    "@ngx-translate",
+    "ngx-translate",
+    "@ngx-translate/http-loader",
+    "multi-http-loader",
+    "@codeandweb/ngx-translate"
+  ],
+  "maintainers": [
+    "raphael.balet@outlook.com"
+  ],
+  "author": {
+    "name": "Raphaël Balet",
+    "email": "raphael.balet@outlook.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "tslib": "^2.6.3"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=16",
+    "@angular/core": ">=16",
+    "@codeandweb/ngx-translate": ">=16"
+  },
+  "sideEffects": false
+}
